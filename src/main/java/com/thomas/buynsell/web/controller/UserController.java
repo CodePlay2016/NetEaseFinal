@@ -183,7 +183,7 @@ public class UserController {
                     HttpServletResponse resp,
                     @RequestBody List<BuyProduct> buyProducts) throws IOException {
         String time = System.currentTimeMillis()+"";
-        System.out.println(time);
+        System.out.println(buyProducts);
         for (BuyProduct bp: buyProducts) {
             Content dContent = service.getContentById(bp.getId());
             System.out.println(dContent.getId());
