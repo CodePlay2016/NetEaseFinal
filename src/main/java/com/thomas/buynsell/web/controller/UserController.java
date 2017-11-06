@@ -64,7 +64,7 @@ public class UserController {
                         @RequestParam("password") String password,
                         HttpSession session,
                         RedirectAttributes reAttributes) throws IOException {
-        System.out.println("login...");
+        System.out.println("login..."+userName);
         String loginMsg = "";
         Person person = service.getPersonByName(userName);
         System.out.println(person);
