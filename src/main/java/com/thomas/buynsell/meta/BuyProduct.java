@@ -1,6 +1,8 @@
 package com.thomas.buynsell.meta;
 
-public class BuyProduct {
+import java.io.Serializable;
+
+public class BuyProduct implements Serializable {
     private int id;
     private int number;
 
