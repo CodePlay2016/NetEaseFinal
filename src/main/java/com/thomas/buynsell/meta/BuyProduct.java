@@ -3,6 +3,8 @@ package com.thomas.buynsell.meta;
 import java.io.Serializable;
 
 public class BuyProduct implements Serializable {
+
+    private static final long serialVersionUID = -5809782578272943999L;
     private int id;
     private int number;
 
