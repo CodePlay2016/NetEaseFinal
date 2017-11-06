@@ -15,12 +15,9 @@
     <mvc:annotation-driven>
         <mvc:message-converters>
 
-            <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
-                <property name="messageConverters">
-                    <list>
-                        <ref bean="jsonHttpMessageConverter" />
-                    </list>
-                </property>
+            <bean class="org.springframework.http.converter.xml.MarshallingHttpMessageConverter">
+                <property name="marshaller" ref="xstreamMarshaller" />
+                <property name="unmarshaller" ref="xstreamMarshaller" />
             </bean>
 
             <bean id="jsonHttpMessageConverter" class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
@@ -32,7 +29,9 @@
             </bean>
 
         </mvc:message-converters>
+
     </mvc:annotation-driven>
+    <bean id="xstreamMarshaller" class="org.springframework.oxm.xstream.XStreamMarshaller" />
     <mvc:default-servlet-handler/>
     <mvc:resources location="/css/" mapping="/css/**"></mvc:resources>
 
