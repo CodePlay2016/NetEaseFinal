@@ -4,6 +4,11 @@ public class BuyProduct {
     private int id;
     private int number;
 
+    public BuyProduct(int id, int number) {
+        this.id = id;
+        this.number = number;
+    }
+
     public int getId() {
         return id;
     }
