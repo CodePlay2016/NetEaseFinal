@@ -89,7 +89,7 @@
 				            }
 					};
 					 xhr.open('post','/api/buy');
-					 xhr.setRequestHeader('Content-Type','application/json');
+					 xhr.setRequestHeader('Content-Type','application/json;charset=UTF-8');
 					 xhr.send(data);
 				}.bind(this)
 			}).show();
