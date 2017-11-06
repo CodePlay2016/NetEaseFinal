@@ -181,15 +181,13 @@ public class UserController {
     @RequestMapping("/api/buy")
     public void buy(HttpServletRequest req, ModelMap map,
                     HttpServletResponse resp,
-                    @RequestBody List<BuyProduct> buyProducts,
-                    @RequestParam("id") int id) throws IOException {
+                    @RequestBody List<BuyProduct> buyProducts) throws IOException {
         String time = System.currentTimeMillis()+"";
         System.out.println(time);
         for (BuyProduct bp: buyProducts) {
             Content dContent = service.getContentById(bp.getId());
             System.out.println(dContent.getId());
-            System.out.println(id);
-            service.addTrx(dContent.getId(),id, dContent.getPrice()*bp.getNumber(),time, bp.getNumber());
+            service.addTrx(dContent.getId(),0, dContent.getPrice()*bp.getNumber(),time, bp.getNumber());
             System.out.println(dContent.getPrice()*bp.getNumber());
         }
         String jsonStr = "{\"code\":\"200\",\"message\":\"OK\",\"result\":\"true\"}";
