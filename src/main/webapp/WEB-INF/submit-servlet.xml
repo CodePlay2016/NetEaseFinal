@@ -20,6 +20,13 @@
           class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
         <property name="templateLoaderPath" value="/template" />
 
+        <property name="freemarkerSettings">
+            <props>
+                <prop key="defaultEncoding">utf8</prop>
+                <prop key="classic_compatible">true</prop>
+            </props>
+        </property>
+ 
         <property name="freemarkerVariables">
             <props>
                 <prop key="defaultEncoding">utf8</prop>
